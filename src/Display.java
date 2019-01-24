@@ -130,19 +130,16 @@ public class Display {
 		Dimension descriptionL1Size = descriptionL1.getPreferredSize();
 		descriptionL1.setBounds(465, 200, descriptionL1Size.width, descriptionL1Size.height);
 		descriptionL1.setForeground(Color.DARK_GRAY);
-		System.out.println(descriptionL1Size.width + " d1");
 		p.add(descriptionL1);
 
 		Dimension descriptionL2Size = descriptionL2.getPreferredSize();
 		descriptionL2.setBounds(462, 230, descriptionL2Size.width, descriptionL2Size.height);
 		descriptionL2.setForeground(Color.DARK_GRAY);
-		System.out.println(descriptionL2Size.width + " d2");
 		p.add(descriptionL2);
 
 		Dimension descriptionL3Size = descriptionL3.getPreferredSize();
 		descriptionL3.setBounds(560, 260, descriptionL3Size.width, descriptionL3Size.height);
 		descriptionL3.setForeground(Color.DARK_GRAY);
-		System.out.println(descriptionL3Size.width + " d3");
 		p.add(descriptionL3);
 
 		Dimension quizButtonSize = quizButton.getPreferredSize();
@@ -153,7 +150,6 @@ public class Display {
 				quizQuestionScreen1();
 			}
 		});
-		System.out.println(quizButtonSize.width + " qB");
 		p.add(quizButton);
 
 		Dimension titleButtonSize = titleButton.getPreferredSize();
@@ -164,7 +160,6 @@ public class Display {
 				title();
 			}
 		});
-		System.out.println(titleButtonSize.width + " tB");
 		p.add(titleButton);
 
 		f.add(p);
@@ -203,7 +198,7 @@ public class Display {
 				new JCheckBox("I associate myself with many people, but there are very few people I trust"),
 				new JCheckBox("My room is littered with books and things im working on") };
 
-		Dimension JCheckBoxSize = x[29].getPreferredSize();
+		Dimension JCheckBoxSize = x[28].getPreferredSize();
 
 		shuffleArray(x);
 
@@ -332,7 +327,6 @@ public class Display {
 							|| (x[k].getText() == "My room is littered with books and things im working on")))
 						answerIntelligentDogs += 1;
 				}
-				System.out.println(answerSportsDogs);
 			}
 		});
 
@@ -376,7 +370,7 @@ public class Display {
 				new JCheckBox("I am very picky about the friends I associate myself with"),
 				new JCheckBox("I love decorating my room") };
 
-		Dimension JCheckBoxSize = x[3].getPreferredSize();
+		Dimension JCheckBoxSize = x[12].getPreferredSize();
 
 		shuffleArray(x);
 
@@ -542,11 +536,11 @@ public class Display {
 
 		};
 
-		Dimension JCheckBoxSize = x[3].getPreferredSize();
+		Dimension JCheckBoxSize = x[5].getPreferredSize();
 
 		shuffleArray(x);
 
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 20; i++) {
 			// setting bounds for individual checkboxes
 			if (i == 0)
 				x[i].setBounds(80, 200, JCheckBoxSize.width, JCheckBoxSize.height);
