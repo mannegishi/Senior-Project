@@ -28,7 +28,7 @@ public class Display {
 	static int answerFamilyDogs = 0;
 	static int answerElegantDogs = 0;
 	static int answerEasyDogs = 0;
-	static int answerMutDogs = 0;
+	static int answerMuttDogs = 0;
 
 	// define new frame
 	public static void def() {
@@ -598,7 +598,7 @@ public class Display {
 		JLabel intro = new JLabel("Check each box that applies to you, then click next.");
 		intro.setFont(quizF);
 
-		JButton nextPage = new JButton("Next");
+		JButton finishPage = new JButton("Finish");
 
 		// placement
 		Dimension titleSize = intro.getPreferredSize();
@@ -606,39 +606,39 @@ public class Display {
 		intro.setForeground(Color.DARK_GRAY);
 		p.add(intro);
 
-		Dimension nextPageSize = nextPage.getPreferredSize();
-		nextPage.setBounds(700, 700, nextPageSize.width, nextPageSize.height);
-		nextPage.setForeground(Color.DARK_GRAY);
-		p.add(nextPage);
+		Dimension finishPageSize = finishPage.getPreferredSize();
+		finishPage.setBounds(700, 700, finishPageSize.width, finishPageSize.height);
+		finishPage.setForeground(Color.DARK_GRAY);
+		p.add(finishPage);
 
-		nextPage.addActionListener(new ActionListener() {
+		finishPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clear();
-				quizQuestionScreen3();
+				quizFinishScreen();
 				for (int k = 0; k < 30; k++) {
-					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time getting extra work done early")
-							|| (x[k].getText() == "I am entertained by building things")
-							|| (x[k].getText() == "I like to think of myself as a loyal person")
-							|| (x[k].getText() == "When I start something, I finish it before I move on to something else")
-							|| (x[k].getText() == "I will not accept failure")
-							|| (x[k].getText() == "I'm not very good at cooking, but I try my best")
-							|| (x[k].getText() == "Its uncommon for me to pass up a drink with friends")
-							|| (x[k].getText() == "I listen to country music")
-							|| (x[k].getText() == "I have a good handful of friends I can trust")
-							|| (x[k].getText() == "My room is rather plain")))
-						answerWorkingDogs += 1;
+					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time watching TV")
+							|| (x[k].getText() == "I can easily entertain myself")
+							|| (x[k].getText() == "I can make a meal out of everything")
+							|| (x[k].getText() == "I never have a problem finding what to watch on Netflix")
+							|| (x[k].getText() == "It isn't hard for me to pick up a random book and enjoy it")
+							|| (x[k].getText() == "I dont go shopping for food until my fridge is empty; i make use out of everything")
+							|| (x[k].getText() == "I don't really drink sodas")
+							|| (x[k].getText() == "I listen to whatever is on the radio")
+							|| (x[k].getText() == "I make friend easily and understand that they come and go")
+							|| (x[k].getText() == "I don't clutter my room very much, I keep what I need")))
+						answerEasyDogs += 1;
 
-					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time with my friends and family")
-							|| (x[k].getText() == "I am entertained at family dinners")
-							|| (x[k].getText() == "I have a plentiful amount of friends and I love being around all of them")
-							|| (x[k].getText() == "There is always a smile on my face")
-							|| (x[k].getText() == "I tend to uplift others any chance I get")
-							|| (x[k].getText() == "People say they love to be around me")
-							|| (x[k].getText() == "I like to go out for food with my friends a lot")
-							|| (x[k].getText() == "I enjoy drinking juice")
-							|| (x[k].getText() == "I have tons of friends")
-							|| (x[k].getText() == "I have lots of pictures of the people I care about in my room")))
-						answerFamilyDogs += 1;
+					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time doing anything and everything")
+							|| (x[k].getText() == "I am entertained by anything")
+							|| (x[k].getText() == "People tell me I'm unpredictable")
+							|| (x[k].getText() == "I take opportunities as they come to me")
+							|| (x[k].getText() == "My mood is generally unpredictable")
+							|| (x[k].getText() == "There are very little foods I will not eat")
+							|| (x[k].getText() == "I'm not picky when it comes to what I order to drink at a restaurant.")
+							|| (x[k].getText() == "I have no distinct taste in music")
+							|| (x[k].getText() == "I've generally been surrounded with enough friends to satisfy me")
+							|| (x[k].getText() == "My room has a lot of random things scattered around but it still feels organized")))
+						answerMuttDogs += 1;
 
 				}
 			}
@@ -648,11 +648,10 @@ public class Display {
 
 	// Fisher Yates shuffle
 	static void shuffleArray(JCheckBox[] x) {
-		// If running on Java 6 or older, use `new Random()` on RHS here
-		Random rnd = ThreadLocalRandom.current();
+		Random rand = ThreadLocalRandom.current();
 		for (int i = x.length - 1; i > 0; i--) {
-			int index = rnd.nextInt(i + 1);
-			// Simple swap
+			int index = rand.nextInt(i + 1);
+			//  swap
 			JCheckBox a = x[index];
 			x[index] = x[i];
 			x[i] = a;
