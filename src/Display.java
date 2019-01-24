@@ -24,6 +24,11 @@ public class Display {
 	static int answerSportsDogs = 0;
 	static int answerToyDogs = 0;
 	static int answerIntelligentDogs = 0;
+	static int answerWorkingDogs = 0;
+	static int answerFamilyDogs = 0;
+	static int answerElegantDogs = 0;
+	static int answerEasyDogs = 0;
+	static int answerMutDogs = 0;
 
 	// define new frame
 	public static void def() {
@@ -96,7 +101,7 @@ public class Display {
 			}
 		});
 		p.add(quitButton);
-
+		
 		f.setVisible(true);
 
 	}
@@ -172,7 +177,7 @@ public class Display {
 				// sports dogs
 				new JCheckBox("I spend my free time outside in the fresh air"),
 				new JCheckBox("I am entertained by hiking"), new JCheckBox("I have recently been to a park"),
-				new JCheckBox("I would hate a job where I couldn’t go outside"),
+				new JCheckBox("I would hate a job where I couldn't go outside"),
 				new JCheckBox("I try and have a positive outlook on everything I can"),
 				new JCheckBox("I actively eat energy bars"), new JCheckBox("Water is one of my favorite drinks"),
 				new JCheckBox("I listen to classic rock"),
@@ -184,7 +189,7 @@ public class Display {
 				new JCheckBox("My wardrobe is extensive"), new JCheckBox("I enjoy the little things in life"),
 				new JCheckBox("I love attention"), new JCheckBox("I love the mall cafeteria"),
 				new JCheckBox("I only drink Fiji water"), new JCheckBox("I listen to pop music"),
-				new JCheckBox("I have many friends but I’m not really close with any of them"),
+				new JCheckBox("I have many friends but I'm not really close with any of them"),
 				new JCheckBox("My room is messy but decorated nicely"),
 
 				// intelegent dogs
@@ -295,7 +300,7 @@ public class Display {
 					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time outside in the fresh air")
 							|| (x[k].getText() == "I am entertained by hiking")
 							|| (x[k].getText() == "I have recently been to a park")
-							|| (x[k].getText() == "I would hate a job where I couldn’t go outside")
+							|| (x[k].getText() == "I would hate a job where I couldn't go outside")
 							|| (x[k].getText() == "I try and have a positive outlook on everything I can")
 							|| (x[k].getText() == "I actively eat energy bars")
 							|| (x[k].getText() == "Water is one of my favorite drinks")
@@ -311,8 +316,7 @@ public class Display {
 							|| (x[k].getText() == "I love attention") || (x[k].getText() == "I love the mall cafeteria")
 							|| (x[k].getText() == "I only drink Fiji water")
 							|| (x[k].getText() == "I listen to pop music")
-							|| (x[k].getText() == "I have many friends but I’m not really close with any of them")
-							|| (x[k].getText() == "I have friends I have spent a long time with")
+							|| (x[k].getText() == "I have many friends but I'm not really close with any of them")
 							|| (x[k].getText() == "My room is messy but decorated nicely")))
 						answerToyDogs += 1;
 
@@ -324,7 +328,6 @@ public class Display {
 							|| (x[k].getText() == "	I like to cook my own meals")
 							|| (x[k].getText() == "	Coffee is one of my favorite drinks")
 							|| (x[k].getText() == "I listen to underground indie music")
-							|| (x[k].getText() == "I have many friends but I’m not really close with any of them")
 							|| (x[k].getText() == "I associate myself with many people, but there are very few people I trust ")
 							|| (x[k].getText() == "My room is littered with books and things im working on")))
 						answerIntelligentDogs += 1;
@@ -333,63 +336,33 @@ public class Display {
 			}
 		});
 
-		// mut
-		/*
-		 * new JCheckBox("I spend my free time doing anything and everything") new
-		 * JCheckBox("I am entertained by anything") new
-		 * JCheckBox("People tell me I’m unpredictable") new
-		 * JCheckBox("I take opportunities as they come to me") new
-		 * JCheckBox("My mood is generally unpredictable") new
-		 * JCheckBox("There are very little foods I will not eat") new
-		 * JCheckBox("I’m not picky when it comes to what I order to drink at a restaurant."
-		 * ) new JCheckBox("I have no distinct taste in music") new
-		 * JCheckBox("I’ve generally been surrounded with enough friends to satisfy me")
-		 * new
-		 * JCheckBox("My room has a lot of random things scattered around but it still feels organized"
-		 * )
-		 */
-		// easydog
-		JCheckBox Q61 = new JCheckBox("	I spend my free time watching TV");
-		JCheckBox Q62 = new JCheckBox("	I can easily entertain myself");
-		JCheckBox Q63 = new JCheckBox("	I can make a meal out of everything");
-		JCheckBox Q64 = new JCheckBox("	I never have a problem finding what to watch on Netflix");
-		JCheckBox Q65 = new JCheckBox("	It isn’t hard for me to pick up a random book and enjoy it");
-		JCheckBox Q66 = new JCheckBox(
-				"	I dont go shopping for food until my fridge is empty; i make use out of everything");
-		JCheckBox Q67 = new JCheckBox("	I don’t really drink sodas");
-		JCheckBox Q68 = new JCheckBox("	I listen to whatever is on the radio");
-		JCheckBox Q69 = new JCheckBox("	I make friend easily and understand that they come and go");
-		JCheckBox Q70 = new JCheckBox("	I don’t clutter my room very much, I keep what I need");
-
 		f.add(p);
 
 	}
 
 	public static void quizQuestionScreen2() {
-		
+
 		JCheckBox[] x = new JCheckBox[] {
 				// sports dogs
 				new JCheckBox("I spend my free time getting extra work done early"),
-				new JCheckBox("I am entertained by building things"), 
+				new JCheckBox("I am entertained by building things"),
 				new JCheckBox("I like to think of myself as a loyal person"),
 				new JCheckBox("When I start something, I finish it before I move on to something else"),
 				new JCheckBox("I will not accept failure"),
-				new JCheckBox("I’m not very good at cooking, but I try my best"), 
+				new JCheckBox("I'm not very good at cooking, but I try my best"),
 				new JCheckBox("Its uncommon for me to pass up a drink with friends"),
 				new JCheckBox("I listen to country music"),
-				new JCheckBox("I have a good handful of friends I can trust"),
-				new JCheckBox("My room is rather plain"),
+				new JCheckBox("I have a good handful of friends I can trust"), new JCheckBox("My room is rather plain"),
 
 				// family dogs
-				new JCheckBox("I spend my free time with my friends and family"), 
+				new JCheckBox("I spend my free time with my friends and family"),
 				new JCheckBox("I am entertained at family dinners"),
-				new JCheckBox("I have a plentiful amount of friends and I love being around all of them"), 
+				new JCheckBox("I have a plentiful amount of friends and I love being around all of them"),
 				new JCheckBox("There is always a smile on my face"),
-				new JCheckBox("I tend to uplift others any chance I get"), 
+				new JCheckBox("I tend to uplift others any chance I get"),
 				new JCheckBox("People say they love to be around me"),
-				new JCheckBox("I like to go out for food with my friends a lot"), 
-				new JCheckBox("I enjoy drinking juice"),
-				new JCheckBox("I have tons of friends"),
+				new JCheckBox("I like to go out for food with my friends a lot"),
+				new JCheckBox("I enjoy drinking juice"), new JCheckBox("I have tons of friends"),
 				new JCheckBox("I have lots of pictures of the people I care about in my room"),
 
 				// elegant dogs
@@ -398,14 +371,13 @@ public class Display {
 				new JCheckBox("I enjoy eating out at nice restaurants"),
 				new JCheckBox("I hate it when people associate intelligence with looks"),
 				new JCheckBox("I can be shy at times, but I open up around the people I care about"),
-				new JCheckBox("I go to fancy restaurants a lot"), 
-				new JCheckBox("Pellegrino is my favorite drink"),
+				new JCheckBox("I go to fancy restaurants a lot"), new JCheckBox("Pellegrino is my favorite drink"),
 				new JCheckBox("I listen to classical music"),
 				new JCheckBox("I am very picky about the friends I associate myself with"),
 				new JCheckBox("I love decorating my room") };
 
 		Dimension JCheckBoxSize = x[3].getPreferredSize();
-		
+
 		shuffleArray(x);
 
 		for (int i = 0; i < 30; i++) {
@@ -476,12 +448,205 @@ public class Display {
 			p.add(x[i]);
 
 		}
+
+		JLabel intro = new JLabel("Check each box that applies to you, then click next.");
+		intro.setFont(quizF);
+
+		JButton nextPage = new JButton("Next");
+
+		// placement
+		Dimension titleSize = intro.getPreferredSize();
+		intro.setBounds(20, 75, titleSize.width, titleSize.height);
+		intro.setForeground(Color.DARK_GRAY);
+		p.add(intro);
+
+		Dimension nextPageSize = nextPage.getPreferredSize();
+		nextPage.setBounds(700, 700, nextPageSize.width, nextPageSize.height);
+		nextPage.setForeground(Color.DARK_GRAY);
+		p.add(nextPage);
+
+		nextPage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clear();
+				quizQuestionScreen3();
+				for (int k = 0; k < 30; k++) {
+					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time getting extra work done early")
+							|| (x[k].getText() == "I am entertained by building things")
+							|| (x[k].getText() == "I like to think of myself as a loyal person")
+							|| (x[k].getText() == "When I start something, I finish it before I move on to something else")
+							|| (x[k].getText() == "I will not accept failure")
+							|| (x[k].getText() == "I'm not very good at cooking, but I try my best")
+							|| (x[k].getText() == "Its uncommon for me to pass up a drink with friends")
+							|| (x[k].getText() == "I listen to country music")
+							|| (x[k].getText() == "I have a good handful of friends I can trust")
+							|| (x[k].getText() == "My room is rather plain")))
+						answerWorkingDogs += 1;
+
+					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time with my friends and family")
+							|| (x[k].getText() == "I am entertained at family dinners")
+							|| (x[k].getText() == "I have a plentiful amount of friends and I love being around all of them")
+							|| (x[k].getText() == "There is always a smile on my face")
+							|| (x[k].getText() == "I tend to uplift others any chance I get")
+							|| (x[k].getText() == "People say they love to be around me")
+							|| (x[k].getText() == "I like to go out for food with my friends a lot")
+							|| (x[k].getText() == "I enjoy drinking juice")
+							|| (x[k].getText() == "I have tons of friends")
+							|| (x[k].getText() == "I have lots of pictures of the people I care about in my room")))
+						answerFamilyDogs += 1;
+
+					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time painting my nails")
+							|| (x[k].getText() == "I am entertained by practicing self-care")
+							|| (x[k].getText() == "I enjoy eating out at nice restaurants")
+							|| (x[k].getText() == "I hate it when people associate intelligence with looks")
+							|| (x[k].getText() == "I can be shy at times, but I open up around the people I care about")
+							|| (x[k].getText() == "I go to fancy restaurants a lot")
+							|| (x[k].getText() == "Pellegrino is my favorite drink")
+							|| (x[k].getText() == "I listen to classical music")
+							|| (x[k].getText() == "I am very picky about the friends I associate myself with")
+							|| (x[k].getText() == "I love decorating my room")))
+						answerElegantDogs += 1;
+				}
+
+			}
+		});
 		f.add(p);
 
-	
 	}
 
-	//Fisher–Yates shuffle
+	public static void quizQuestionScreen3() {
+		JCheckBox[] x = new JCheckBox[] {
+				// easy dogs
+				new JCheckBox("I spend my free time watching TV"), 
+				new JCheckBox("I can easily entertain myself"),
+				new JCheckBox("I can make a meal out of everything"),
+				new JCheckBox("I never have a problem finding what to watch on Netflix"),
+				new JCheckBox("It isn't hard for me to pick up a random book and enjoy it"),
+				new JCheckBox("I dont go shopping for food until my fridge is empty; i make use out of everything"),
+				new JCheckBox("I don't really drink sodas"), 
+				new JCheckBox("I listen to whatever is on the radio"),
+				new JCheckBox("I make friend easily and understand that they come and go"),
+				new JCheckBox("I don't clutter my room very much, I keep what I need"),
+
+				// mutt dogs
+
+				new JCheckBox("I spend my free time doing anything and everything"),
+				new JCheckBox("I am entertained by anything"), 
+				new JCheckBox("People tell me I'm unpredictable"),
+				new JCheckBox("I take opportunities as they come to me"),
+				new JCheckBox("My mood is generally unpredictable"),
+				new JCheckBox("There are very little foods I will not eat"),
+				new JCheckBox("I'm not picky when it comes to what I order to drink at a restaurant."),
+				new JCheckBox("I have no distinct taste in music"),
+				new JCheckBox("I've generally been surrounded with enough friends to satisfy me"),
+				new JCheckBox("My room has a lot of random things scattered around but it still feels organized")
+
+		};
+
+		Dimension JCheckBoxSize = x[3].getPreferredSize();
+
+		shuffleArray(x);
+
+		for (int i = 0; i < 30; i++) {
+			// setting bounds for individual checkboxes
+			if (i == 0)
+				x[i].setBounds(80, 200, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 1)
+				x[i].setBounds(80, 225, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 2)
+				x[i].setBounds(80, 250, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 3)
+				x[i].setBounds(80, 275, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 4)
+				x[i].setBounds(80, 300, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 5)
+				x[i].setBounds(80, 325, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 6)
+				x[i].setBounds(80, 350, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 7)
+				x[i].setBounds(80, 375, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 8)
+				x[i].setBounds(80, 400, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 9)
+				x[i].setBounds(80, 425, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 10)
+				x[i].setBounds(80, 450, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 11)
+				x[i].setBounds(700, 200, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 12)
+				x[i].setBounds(700, 225, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 13)
+				x[i].setBounds(700, 250, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 14)
+				x[i].setBounds(700, 275, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 15)
+				x[i].setBounds(700, 300, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 16)
+				x[i].setBounds(700, 325, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 17)
+				x[i].setBounds(700, 350, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 18)
+				x[i].setBounds(700, 375, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 19)
+				x[i].setBounds(700, 400, JCheckBoxSize.width, JCheckBoxSize.height);
+			if (i == 20)
+				x[i].setBounds(700, 425, JCheckBoxSize.width, JCheckBoxSize.height);
+
+			p.add(x[i]);
+
+		}
+
+		JLabel intro = new JLabel("Check each box that applies to you, then click next.");
+		intro.setFont(quizF);
+
+		JButton nextPage = new JButton("Next");
+
+		// placement
+		Dimension titleSize = intro.getPreferredSize();
+		intro.setBounds(20, 75, titleSize.width, titleSize.height);
+		intro.setForeground(Color.DARK_GRAY);
+		p.add(intro);
+
+		Dimension nextPageSize = nextPage.getPreferredSize();
+		nextPage.setBounds(700, 700, nextPageSize.width, nextPageSize.height);
+		nextPage.setForeground(Color.DARK_GRAY);
+		p.add(nextPage);
+
+		nextPage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clear();
+				quizQuestionScreen3();
+				for (int k = 0; k < 30; k++) {
+					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time getting extra work done early")
+							|| (x[k].getText() == "I am entertained by building things")
+							|| (x[k].getText() == "I like to think of myself as a loyal person")
+							|| (x[k].getText() == "When I start something, I finish it before I move on to something else")
+							|| (x[k].getText() == "I will not accept failure")
+							|| (x[k].getText() == "I'm not very good at cooking, but I try my best")
+							|| (x[k].getText() == "Its uncommon for me to pass up a drink with friends")
+							|| (x[k].getText() == "I listen to country music")
+							|| (x[k].getText() == "I have a good handful of friends I can trust")
+							|| (x[k].getText() == "My room is rather plain")))
+						answerWorkingDogs += 1;
+
+					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time with my friends and family")
+							|| (x[k].getText() == "I am entertained at family dinners")
+							|| (x[k].getText() == "I have a plentiful amount of friends and I love being around all of them")
+							|| (x[k].getText() == "There is always a smile on my face")
+							|| (x[k].getText() == "I tend to uplift others any chance I get")
+							|| (x[k].getText() == "People say they love to be around me")
+							|| (x[k].getText() == "I like to go out for food with my friends a lot")
+							|| (x[k].getText() == "I enjoy drinking juice")
+							|| (x[k].getText() == "I have tons of friends")
+							|| (x[k].getText() == "I have lots of pictures of the people I care about in my room")))
+						answerFamilyDogs += 1;
+
+				}
+			}
+		});
+		f.add(p);
+	}
+
+	// Fisher Yates shuffle
 	static void shuffleArray(JCheckBox[] x) {
 		// If running on Java 6 or older, use `new Random()` on RHS here
 		Random rnd = ThreadLocalRandom.current();
