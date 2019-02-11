@@ -29,6 +29,7 @@ public class Display {
 	static int answerElegantDogs = 0;
 	static int answerEasyDogs = 0;
 	static int answerMuttDogs = 0;
+	static String dogResult;
 
 	// define new frame
 	public static void def() {
@@ -72,18 +73,8 @@ public class Display {
 		});
 		p.add(quizButton);
 
-		Dimension mapButtonSize = mapButton.getPreferredSize();
-		mapButton.setBounds(30, 400, mapButtonSize.width, mapButtonSize.height);
-		mapButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				clear();
-				mapScreen();
-			}
-		});
-		p.add(mapButton);
-
 		Dimension dogsButtonSize = dogsButton.getPreferredSize();
-		dogsButton.setBounds(30, 500, dogsButtonSize.width, dogsButtonSize.height);
+		dogsButton.setBounds(30, 400, dogsButtonSize.width, dogsButtonSize.height);
 		dogsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clear();
@@ -93,7 +84,7 @@ public class Display {
 		p.add(dogsButton);
 
 		Dimension quitButtonSize = quitButton.getPreferredSize();
-		quitButton.setBounds(30, 600, quitButtonSize.width, quitButtonSize.height);
+		quitButton.setBounds(30, 500, quitButtonSize.width, quitButtonSize.height);
 		quitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clear();
@@ -101,7 +92,7 @@ public class Display {
 			}
 		});
 		p.add(quitButton);
-		
+
 		f.setVisible(true);
 
 	}
@@ -289,8 +280,6 @@ public class Display {
 
 		nextPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				clear();
-				quizQuestionScreen2();
 				for (int k = 0; k < 30; k++) {
 					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time outside in the fresh air")
 							|| (x[k].getText() == "I am entertained by hiking")
@@ -327,6 +316,9 @@ public class Display {
 							|| (x[k].getText() == "My room is littered with books and things im working on")))
 						answerIntelligentDogs += 1;
 				}
+				clear();
+				quizQuestionScreen2();
+
 			}
 		});
 
@@ -461,9 +453,8 @@ public class Display {
 
 		nextPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				clear();
-				quizQuestionScreen3();
 				for (int k = 0; k < 30; k++) {
+
 					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time getting extra work done early")
 							|| (x[k].getText() == "I am entertained by building things")
 							|| (x[k].getText() == "I like to think of myself as a loyal person")
@@ -500,6 +491,8 @@ public class Display {
 							|| (x[k].getText() == "I love decorating my room")))
 						answerElegantDogs += 1;
 				}
+				clear();
+				quizQuestionScreen3();
 
 			}
 		});
@@ -510,22 +503,18 @@ public class Display {
 	public static void quizQuestionScreen3() {
 		JCheckBox[] x = new JCheckBox[] {
 				// easy dogs
-				new JCheckBox("I spend my free time watching TV"), 
-				new JCheckBox("I can easily entertain myself"),
+				new JCheckBox("I spend my free time watching TV"), new JCheckBox("I can easily entertain myself"),
 				new JCheckBox("I can make a meal out of everything"),
 				new JCheckBox("I never have a problem finding what to watch on Netflix"),
 				new JCheckBox("It isn't hard for me to pick up a random book and enjoy it"),
 				new JCheckBox("I dont go shopping for food until my fridge is empty; i make use out of everything"),
-				new JCheckBox("I don't really drink sodas"), 
-				new JCheckBox("I listen to whatever is on the radio"),
+				new JCheckBox("I don't really drink sodas"), new JCheckBox("I listen to whatever is on the radio"),
 				new JCheckBox("I make friend easily and understand that they come and go"),
 				new JCheckBox("I don't clutter my room very much, I keep what I need"),
 
 				// mutt dogs
-
 				new JCheckBox("I spend my free time doing anything and everything"),
-				new JCheckBox("I am entertained by anything"), 
-				new JCheckBox("People tell me I'm unpredictable"),
+				new JCheckBox("I am entertained by anything"), new JCheckBox("People tell me I'm unpredictable"),
 				new JCheckBox("I take opportunities as they come to me"),
 				new JCheckBox("My mood is generally unpredictable"),
 				new JCheckBox("There are very little foods I will not eat"),
@@ -607,9 +596,7 @@ public class Display {
 
 		finishPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				clear();
-				quizFinishScreen();
-				for (int k = 0; k < 30; k++) {
+				for (int k = 0; k < 20; k++) {
 					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time watching TV")
 							|| (x[k].getText() == "I can easily entertain myself")
 							|| (x[k].getText() == "I can make a meal out of everything")
@@ -619,8 +606,11 @@ public class Display {
 							|| (x[k].getText() == "I don't really drink sodas")
 							|| (x[k].getText() == "I listen to whatever is on the radio")
 							|| (x[k].getText() == "I make friend easily and understand that they come and go")
-							|| (x[k].getText() == "I don't clutter my room very much, I keep what I need")))
+							|| (x[k].getText() == "I don't clutter my room very much, I keep what I need"))) {
+						System.out.println(x[1].getText());
+
 						answerEasyDogs += 1;
+					}
 
 					if (x[k].isSelected() && ((x[k].getText() == "I spend my free time doing anything and everything")
 							|| (x[k].getText() == "I am entertained by anything")
@@ -635,8 +625,22 @@ public class Display {
 						answerMuttDogs += 1;
 
 				}
+
+				clear();
+				quizFinishScreen();
+
 			}
 		});
+
+		System.out.println("answerSportsDogs:" + answerSportsDogs);
+		System.out.println("answerToyDogs:" + answerToyDogs);
+		System.out.println("answerIntelligentDogs:" + answerIntelligentDogs);
+		System.out.println("answerEasyDogs:" + answerEasyDogs);
+		System.out.println("answerElegantDogs:" + answerElegantDogs);
+		System.out.println("answerFamilyDogs:" + answerFamilyDogs);
+		System.out.println("answerMuttDogs:" + answerMuttDogs);
+		System.out.println("answerWorkingDogs:" + answerWorkingDogs);
+
 		f.add(p);
 	}
 
@@ -645,7 +649,7 @@ public class Display {
 		Random rand = ThreadLocalRandom.current();
 		for (int i = x.length - 1; i > 0; i--) {
 			int index = rand.nextInt(i + 1);
-			//  swap
+			// swap
 			JCheckBox a = x[index];
 			x[index] = x[i];
 			x[i] = a;
@@ -654,9 +658,179 @@ public class Display {
 
 	public static void quizFinishScreen() {
 
+		JLabel title = new JLabel("Results: ");
+		title.setFont(titleF);
+
+		// description declarations
+		JLabel descriptionL1 = new JLabel();
+		JLabel descriptionL2 = new JLabel();
+		JLabel descriptionL3 = new JLabel();
+
+		JButton titleButton = new JButton("Back to title");
+		System.out.println("answerSportDogs before the method:" + answerSportsDogs);
+		greatestAm(answerSportsDogs, answerToyDogs, answerIntelligentDogs, answerWorkingDogs, answerFamilyDogs,
+				answerElegantDogs, answerEasyDogs, answerMuttDogs);
+
+		// displaying answers on quiz final page
+		if (dogResult == "sport") {
+
+			descriptionL1.setText("You got 'sporty type' dogs!");
+			descriptionL2.setText("This includes Terriers, Weimaraners, and Shorthaired Pointers");
+			descriptionL3.setText("You will never get tired with this dog!");
+
+			System.out.println("sport");
+
+		}
+		if (dogResult == "toy") {
+
+			descriptionL1.setText("You got 'toy' dogs!");
+			descriptionL2.setText("This includes Chihuahuas, Pomeranians, and Maltese Dogs");
+			descriptionL3.setText("These are small, energetic dogs perfect for a city lifestyle");
+
+			System.out.println("toy");
+
+		}
+		if (dogResult == "intelligent") {
+
+			descriptionL1.setText("You got 'intelligent' dogs!");
+			descriptionL2.setText("This includes Collies, Retrievers, and Poodles");
+			descriptionL3.setText("These are affectionate and easily trainable dogs");
+
+			System.out.println("intelligent");
+
+		}
+
+		if (dogResult == "working") {
+
+			descriptionL1.setText("You got 'working' dogs!");
+			descriptionL2.setText("This includes German Shepards, Mastifs, and Huskies.");
+			descriptionL3.setText("These dogs are made to accompany you and help you with tasks");
+
+			dogResult = "Working";
+			System.out.println("working");
+
+		}
+
+		if (dogResult == "family") {
+
+			descriptionL1.setText("You got 'family' dogs!");
+			descriptionL2.setText("This includes Retrievers, Beagles, and Poodles.");
+			descriptionL3.setText("These dogs are great with young children and do not require lots of space");
+
+			System.out.println("family");
+
+		}
+		if (dogResult == "elegant") {
+
+			descriptionL1.setText("You got 'Elegant' dogs!");
+			descriptionL2.setText("This includes Collies, Afghan Hounds, and Shih Tzus.");
+			descriptionL3.setText("These are exciting while still flaunting an elegant coat!");
+
+			System.out.println("elegant");
+
+		}
+		if (dogResult == "easy") {
+
+			descriptionL1.setText("You got 'Easy' dogs!");
+			descriptionL2.setText("This includes Bulldogs, Labs, and Saint Bernards.");
+			descriptionL3.setText("These are easygoing, laid back dogs you dont have to worry about too much!");
+
+			System.out.println("easy");
+
+		}
+		if (dogResult == "Mutt") {
+
+			descriptionL1.setText("You got 'Mutt' dogs!");
+			descriptionL2.setText("These are dogs mixed with lots of breeds, known and unknown.");
+			descriptionL3.setText("These loving, trainable, and excitingly unpredictable dogs perfect for any owner.");
+
+			System.out.println("mutt");
+		}
+
+		descriptionL1.setFont(textF);
+		descriptionL2.setFont(textF);
+		descriptionL3.setFont(textF);
+
+		Dimension descriptionL1Size = descriptionL1.getPreferredSize();
+		descriptionL1.setBounds(700 - (descriptionL1Size.width / 2), 650, descriptionL1Size.width,
+				descriptionL1Size.height);
+		descriptionL1.setForeground(Color.DARK_GRAY);
+
+		Dimension descriptionL2Size = descriptionL2.getPreferredSize();
+		descriptionL2.setBounds(700 - (descriptionL2Size.width / 2), 675, descriptionL2Size.width,
+				descriptionL2Size.height);
+		descriptionL2.setForeground(Color.DARK_GRAY);
+
+		Dimension descriptionL3Size = descriptionL3.getPreferredSize();
+		descriptionL3.setBounds(700 - (descriptionL3Size.width / 2), 700, descriptionL3Size.width,
+				descriptionL3Size.height);
+		descriptionL3.setForeground(Color.DARK_GRAY);
+
+		p.add(descriptionL1);
+		p.add(descriptionL2);
+		p.add(descriptionL3);
+
+		// placement
+		Dimension titleSize = title.getPreferredSize();
+		title.setBounds(700 - (titleSize.width / 2), 100, titleSize.width, titleSize.height);
+		title.setForeground(Color.DARK_GRAY);
+		p.add(title);
+
+		Dimension titleButtonSize = titleButton.getPreferredSize();
+		titleButton.setBounds(700 - (titleButtonSize.width / 2), 775, titleButtonSize.width, titleButtonSize.height);
+		titleButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clear();
+				title();
+			}
+		});
+		p.add(titleButton);
+
+		f.add(p);
+
 	}
 
-	public static void mapScreen() {
+	public static void greatestAm(int sport, int toy, int intelligent, int easy, int elegant, int family, int mutt,
+			int working) {
+		System.out.println("sport:" + sport);
+		System.out.println("mutt:" + mutt);
+
+		int arr[] = new int[] { sport, toy, intelligent, easy, elegant, family, mutt, working };
+
+		int max = arr[0];
+
+		for (int i = 1; i < arr.length; i++) {
+			System.out.println("arr[" + i + "] = " + arr[i]);
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+		System.out.print("max before if:" + max);
+		if (max == sport) {
+			System.out.print("sportsmax" + max);
+			dogResult = "sport";
+		}
+		if (max == toy) {
+			dogResult = "toy";
+		}
+		if (max == intelligent) {
+			dogResult = "intelligent";
+		}
+		if (max == easy) {
+			dogResult = "easy";
+		}
+		if (max == elegant) {
+			dogResult = "elegant";
+		}
+		if (max == family) {
+			dogResult = "family";
+		}
+		if (max == mutt) {
+			dogResult = "mutt";
+		}
+		if (max == working) {
+			dogResult = "working";
+		}
 
 	}
 
