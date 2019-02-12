@@ -4,7 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-public class Spider extends bork {
+public class Spider{
 
 	public static void main(String[] args) throws IOException {
 		aSecondChanceLeg();
@@ -27,22 +27,32 @@ public class Spider extends bork {
 		if (text.contains("adoption pending")) {
 			text = text.replace(" (adoption pending)", "");
 		}
+		if (text.contains(" Female")) {
+			text = text.replace(" Female", "@Female*\n");
+		}
+		if (text.contains(" Male")) {
+			text = text.replace(" Male", "@Male*\n");
+		}
 
 		String[] names;
 
 		System.out.println(text);
 
 		String currentName;
-		int nameLocation;
-		for (int i = 0; i < text.length(); i++) {
+		int lNameLocation = 0;
+		int fNameLocation = 0;		
+		for (int i = 0; i < text.length(); i++) {			
 			char c = text.charAt(i);
 			if (c == '#') {
-				nameLocation = i;
-				currentName = text.substring(0, nameLocation);
-				System.out.println(currentName);
+				fNameLocation = lNameLocation;
+				lNameLocation = i;
 
-				break;
+				currentName = text.substring(fNameLocation, lNameLocation);
+				System.out.println(currentName);
+				
+				
 			}
+			
 			//if (c == '#' && i != 0) {
 
 			//}
