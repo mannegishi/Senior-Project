@@ -1,4 +1,9 @@
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Random;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,10 +12,29 @@ import org.jsoup.nodes.Element;
 public class Spider {
 
 	public static void main(String[] args) throws IOException {
+		
+		/*try {
+        
+			String dbURL = "jdbc:sqlserver://localhost";
+            String user = "sa";
+            String pass = "reallyStrongPwd123";
+            Connection conn = DriverManager.getConnection(dbURL, user, pass);
+            if (conn != null) {
+            	System.out.println("Connection Made.");
+            	DatabaseMetaData dm = conn.getMetaData();
+                System.out.println("Driver name: " + dm.getDriverName());
+                System.out.println("Driver version: " + dm.getDriverVersion());
+                System.out.println("Product name: " + dm.getDatabaseProductName());
+                System.out.println("Product version: " + dm.getDatabaseProductVersion());
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+		*/
 		//aSecondChanceLeg();
-		leg2();
-
+		justinBarlett();
 	}
+	
 
 	public static void aSecondChanceLeg() throws IOException {
 		Document doc = Jsoup.connect("https://www.asecondchancerescue.org/animals/list?Species=Dog").get();
@@ -35,7 +59,7 @@ public class Spider {
 			text = text.replace(" Male", "@Male*\n");
 		}
 
-		String[] names;
+		//String[] names;
 
 		System.out.println(text);
 
@@ -56,8 +80,13 @@ public class Spider {
 				System.out.println(currentName);
 
 				fNameLocation = 1;
+
+			
+					Random rand = new Random();
+					int x = rand.nextInt(3000);
+					//addName(x, currentName, 1);
 				
-				checkForName(currentName, 1);
+				
 				
 			} else if (c == '#') {
 				fNameLocation = starLocation + 2;
@@ -65,14 +94,19 @@ public class Spider {
 
 				currentName = text.substring(fNameLocation, lNameLocation);
 				System.out.println(currentName);
+				
+					Random rand = new Random();
+					int x = rand.nextInt(3000);
+					//addName(x, currentName, 1);
+				}
 
 			}
 
 		
 		}
-	}
+	
 
-	public static void leg2() throws IOException {
+	public static void justinBarlett() throws IOException {
 		Document doc = Jsoup.connect("https://www.justinbartlettanimalrescue.org/animals/list?Species=Dog").get();
 		Element table = doc.select("tbody").last(); // select the first table.
 		String text = table.text();
@@ -94,13 +128,10 @@ public class Spider {
 		if (text.contains(" Male")) {
 			text = text.replace(" Male", "@Male*\n");
 		}
-		//if(text.contains("Ropie#Labrador Retriever/Mixed")) {
-		//	text = text.replace("Ropie#Labrador Retriever/Mixed", "");
-		//Layne#Chihuahua/Mixed@Male*
-		//Lilly#Chihuahua/Miniature Pinscher/Mixed (short coat)@Female*
-		//}
+
 		System.out.println(text);
 
+		//david ! 134-148
 
 		int firstPlace = 0;
 		int lastPlace = 0;
@@ -111,10 +142,11 @@ public class Spider {
 				lastPlace = i;
 				String tempText = text.substring(firstPlace, lastPlace);
 				System.out.println(tempText);
-				if (!(tempText).contains("@")){
-					text = text.replace(text.substring(firstPlace, tempText.indexOf("\n")), "");
+				if ((tempText).contains("Mixed")){
+					text = text.replace(text.substring(firstPlace, tempText.indexOf(" ")), "");
 				}
-				
+				//Ropie#Labrador Retriever/Mixed Roro#Terrier/Mixed@Female*
+
 			}
 		}
 		String[] names;
@@ -139,8 +171,7 @@ public class Spider {
 
 				fNameLocation = 1;
 				
-				checkForName(currentName, 1);
-				
+				//addName()
 			} else if (c == '#') {
 				fNameLocation = starLocation + 2;
 				lNameLocation = i;
@@ -159,17 +190,27 @@ public class Spider {
 
 	}
 	
-	public static void checkForName(String name, int id) {
-		if(id == 1) {
+
+	public static void addDog(int dogID, String name, String breed, String gender, int shelterID) {
+		
+		
+		if(shelterID == 1) {
+			
+			
+			String query = "IF NOT EXISTS (SELECT * FROM aSecondChance WHERE dogName = '" + name + "')" + 
+					"BEGIN" + 
+					"INSERT INTO aSecondChance(ID,dogname,breed,gender) VALUES ('" + dogID + "',"+ "'" + name + "','" + breed + "','" + gender + "';"
+					+ "END";
 			
 		}
 		
-		if(id == 2) {
+		if(shelterID == 2) {
 			
 		}
 		
-		if(id == 3) {
+		if(shelterID == 3) {
 			
 		}
+		
 	}
 }
